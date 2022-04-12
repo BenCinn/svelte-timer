@@ -1,12 +1,14 @@
 <script>
     var ms = 0
     var i = 0
-    let display = "0.00"
+    let display = "0.000"
     
     function Seconds() {
         if (i == 1) {
             ms += 1
-            display = ms.toString().substring(0, ms.toString().length - 2) + "." + ms.toString().substring(ms.toString().length - 2, ms.toString().length);
+            let act = ms.toString()
+            act = act.padStart(4, "0")
+            display = act.substring(0, act.length - 3) + "." + act.substring(act.length - 3, act.length);
             if (display[0] == "."){
                 display = "0".concat(display)
             }
@@ -21,9 +23,9 @@
     }
     function reset(){
         ms = 0
-        display = "0.00"
+        display = "0.000"
     }
-    setInterval(Seconds, 10)
+    setInterval(Seconds, 1)
 
 </script>
 
