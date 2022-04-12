@@ -23,7 +23,7 @@
         ms = 0
         display = "0.00"
     }
-    setInterval(Seconds, 1)
+    setInterval(Seconds, 10)
 
 </script>
 
@@ -32,5 +32,5 @@
 <p>You are here <b class="text-blue-500">{display}</b> s</p>
 <div class="flex space-x-4">
     <button on:click={toggle} class="transition-colors duration-300 text-gray-500 {i == 0 ? 'bg-gray-100 hover:bg-gray-200' : 'bg-gray-300'} rounded px-3 py-2">{#if i == 0}Start{:else}Stop{/if}</button>
-    <button on:click={reset} class="text-white bg-orange-400 rounded px-3 py-2">Reset</button>
+    <button on:click={reset} class="text-white transition-colors duration-300 bg-orange-400 rounded px-3 py-2 hover:bg-orange-300">Reset</button>
 </div>
